@@ -1,0 +1,957 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+    <title>Quasar Media | Agência de Marketing Digital</title>
+    <meta name="description" content="Conteúdo criativo, tráfego inteligente e resultados reais. +100 marcas impulsionadas no digital. Agência Quasar Media - Belém/PA">
+    
+    <!-- ==================== FONTS & ICONS ==================== -->
+    <!-- Google Fonts: Inter (modern sans-serif) -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
+    <!-- Font Awesome 6 (ícones) -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
+
+    <style>
+        /* ==================== RESET & VARIÁVEIS GLOBAIS ==================== */
+        /* Reset básico para consistência entre navegadores */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        /* Corpo escuro, tipografia limpa e suave */
+        body {
+            background-color: #000000;
+            font-family: 'Inter', sans-serif;
+            color: #eaeef5;
+            line-height: 1.5;
+            scroll-behavior: smooth;
+        }
+
+        /* Paleta de cores (design system) */
+        :root {
+            --black-deep: #000000;
+            --black-rich: #0a0a0a;
+            --black-card: #111111;
+            --blue-primary: #0a66c2;
+            --blue-electric: #0099ff;
+            --blue-glow: #00a8ff;
+            --blue-dark: #0a4c8a;
+            --gray-muted: #b0b8c5;
+            --white-soft: #f0f4fa;
+        }
+
+        /* Scrollbar personalizada (visual futurista) */
+        ::-webkit-scrollbar {
+            width: 6px;
+        }
+        ::-webkit-scrollbar-track {
+            background: #0a0a0a;
+        }
+        ::-webkit-scrollbar-thumb {
+            background: var(--blue-primary);
+            border-radius: 8px;
+        }
+
+        /* Container centralizador com padding lateral responsivo */
+        .container {
+            max-width: 1300px;
+            margin: 0 auto;
+            padding: 0 24px;
+        }
+
+        /* Seções espaçadas e com borda sutil de destaque */
+        section {
+            padding: 80px 0;
+            border-bottom: 1px solid rgba(10, 102, 194, 0.2);
+        }
+        section:last-child {
+            border-bottom: none;
+        }
+
+        /* ==================== TIPOGRAFIA ==================== */
+        h1, h2, h3 {
+            font-weight: 700;
+            letter-spacing: -0.02em;
+        }
+
+        /* Título hero com gradiente azul/branco */
+        h1 {
+            font-size: clamp(2.8rem, 8vw, 5rem);
+            line-height: 1.1;
+            background: linear-gradient(135deg, #ffffff 30%, var(--blue-electric) 80%);
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            margin-bottom: 1.25rem;
+        }
+
+        /* Títulos de seção com linha decorativa abaixo */
+        h2 {
+            font-size: clamp(2rem, 5vw, 2.8rem);
+            margin-bottom: 2rem;
+            position: relative;
+            display: inline-block;
+        }
+        h2:after {
+            content: '';
+            position: absolute;
+            bottom: -12px;
+            left: 0;
+            width: 70px;
+            height: 3px;
+            background: var(--blue-electric);
+            border-radius: 4px;
+        }
+
+        /* Subtítulo de seção (tags pequenas acima do h2) */
+        .section-sub {
+            color: var(--blue-glow);
+            text-transform: uppercase;
+            font-weight: 600;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            margin-bottom: 1rem;
+        }
+
+        /* ==================== NAVBAR (MENU SUPERIOR) ==================== */
+        .navbar {
+            position: sticky;
+            top: 0;
+            backdrop-filter: blur(16px);      /* Efeito vidro fosco */
+            background: rgba(0, 0, 0, 0.75);
+            z-index: 1000;
+            padding: 18px 0;
+            border-bottom: 1px solid rgba(0, 168, 255, 0.2);
+        }
+
+        .nav-container {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        /* Logo: imagem + texto alinhados verticalmente */
+        .logo-imaf {
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            text-decoration: none;
+            color: inherit;
+        }
+
+        .logo-img {
+            height: 50px;
+            width: auto;
+            object-fit: contain;
+            filter: drop-shadow(0 2px 6px rgba(0, 168, 255, 0.35));
+            transition: transform 0.3s ease;
+        }
+        .logo-img:hover {
+            transform: scale(1.05);
+        }
+
+        .logo-text {
+            font-size: 1.75rem;
+            font-weight: 800;
+            letter-spacing: -0.5px;
+            background: linear-gradient(120deg, #ffffff, var(--blue-electric));
+            -webkit-background-clip: text;
+            background-clip: text;
+            color: transparent;
+            line-height: 1;
+        }
+
+        /* Links de navegação desktop */
+        .nav-links {
+            display: flex;
+            gap: 2rem;
+            align-items: center;
+            list-style: none;
+        }
+
+        .nav-links a {
+            color: #eaeef5;
+            text-decoration: none;
+            font-weight: 500;
+            transition: 0.2s;
+            font-size: 0.95rem;
+        }
+        .nav-links a:hover {
+            color: var(--blue-electric);
+        }
+
+        /* Botão menu mobile (hambúrguer) */
+        .menu-icon {
+            display: none;
+            font-size: 1.8rem;
+            cursor: pointer;
+            color: var(--blue-electric);
+        }
+
+        /* ==================== BOTÕES GLOBAIS ==================== */
+        .btn-primary {
+            background: linear-gradient(95deg, var(--blue-primary), var(--blue-electric));
+            border: none;
+            padding: 12px 28px;
+            border-radius: 40px;
+            color: white;
+            font-weight: 600;
+            cursor: pointer;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+            font-size: 0.9rem;
+            box-shadow: 0 4px 12px rgba(0, 168, 255, 0.3);
+        }
+        .btn-primary:hover {
+            transform: scale(1.02);
+            box-shadow: 0 8px 20px rgba(0, 168, 255, 0.5);
+        }
+
+        .btn-outline {
+            background: transparent;
+            border: 1.5px solid var(--blue-electric);
+            padding: 10px 26px;
+            border-radius: 40px;
+            color: var(--blue-electric);
+            font-weight: 600;
+            transition: 0.2s;
+            text-decoration: none;
+            display: inline-block;
+        }
+        .btn-outline:hover {
+            background: rgba(0, 168, 255, 0.1);
+            border-color: #fff;
+            color: #fff;
+        }
+
+        /* ==================== SEÇÃO HERO ==================== */
+        .hero {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            align-items: center;
+            gap: 40px;
+        }
+        .hero-content {
+            flex: 1.2;
+        }
+        .hero-stats {
+            display: flex;
+            gap: 2rem;
+            margin: 28px 0 24px;
+            flex-wrap: wrap;
+        }
+        .stat-item {
+            text-align: center;
+        }
+        .stat-number {
+            font-size: 2rem;
+            font-weight: 800;
+            color: var(--blue-electric);
+        }
+        .hero-badges {
+            display: flex;
+            gap: 16px;
+            flex-wrap: wrap;
+            margin-top: 20px;
+        }
+        .badge-local {
+            background: rgba(0, 168, 255, 0.12);
+            padding: 6px 14px;
+            border-radius: 50px;
+            font-size: 0.8rem;
+            border-left: 2px solid var(--blue-electric);
+        }
+        .hero-right {
+            flex: 0.9;
+            background: radial-gradient(circle at 30% 20%, rgba(10, 102, 194, 0.2), transparent);
+            padding: 20px;
+            border-radius: 32px;
+            text-align: center;
+        }
+        .instagram-card {
+            background: rgba(0, 0, 0, 0.6);
+            backdrop-filter: blur(8px);
+            border-radius: 24px;
+            padding: 20px;
+            border: 1px solid rgba(0, 168, 255, 0.4);
+        }
+        .insta-stats {
+            display: flex;
+            justify-content: space-around;
+            margin: 15px 0;
+        }
+        .insta-stats strong {
+            font-size: 1.3rem;
+            display: block;
+            color: white;
+        }
+
+        /* ==================== CARDS DE SERVIÇOS ==================== */
+        .services-grid, .clients-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+            gap: 28px;
+            margin-top: 20px;
+        }
+        .service-card {
+            background: var(--black-card);
+            border-radius: 24px;
+            padding: 32px 24px;
+            transition: 0.25s ease;
+            border: 1px solid rgba(0, 168, 255, 0.2);
+        }
+        .service-card:hover {
+            transform: translateY(-6px);
+            border-color: var(--blue-electric);
+            box-shadow: 0 20px 30px -12px rgba(0, 168, 255, 0.2);
+        }
+        .service-icon {
+            font-size: 2.5rem;
+            color: var(--blue-electric);
+            margin-bottom: 20px;
+        }
+        .client-item {
+            background: #0a0c10;
+            border-radius: 20px;
+            padding: 28px 20px;
+            text-align: center;
+            font-weight: 600;
+            font-size: 1.2rem;
+            letter-spacing: 1px;
+            border: 1px solid #1f2a3a;
+            transition: 0.2s;
+        }
+        .client-item:hover {
+            border-color: var(--blue-electric);
+            background: #0f1722;
+        }
+
+        /* ==================== FLUXO CRIATIVO (STEPS) ==================== */
+        .flow-steps {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: space-between;
+            gap: 24px;
+            margin: 40px 0;
+        }
+        .step {
+            flex: 1;
+            min-width: 180px;
+            background: rgba(17, 17, 17, 0.7);
+            border-radius: 28px;
+            padding: 28px 18px;
+            text-align: center;
+            border-top: 3px solid var(--blue-electric);
+        }
+        .step-number {
+            font-size: 2.5rem;
+            font-weight: 800;
+            color: var(--blue-electric);
+            opacity: 0.7;
+        }
+
+        /* ==================== BLOCO NARRATIVO (DESTAQUE) ==================== */
+        .narrative-block {
+            background: linear-gradient(145deg, #03070f, #000000);
+            border-radius: 48px;
+            padding: 60px 40px;
+            text-align: center;
+            margin: 40px 0;
+            border: 1px solid rgba(0, 168, 255, 0.5);
+            box-shadow: 0 0 35px rgba(0, 168, 255, 0.15);
+        }
+        .narrative-block p {
+            font-size: clamp(1.5rem, 4vw, 2.5rem);
+            font-weight: 600;
+            font-style: italic;
+            color: #eef5ff;
+        }
+        .narrative-small {
+            margin-top: 20px;
+            letter-spacing: 2px;
+            font-size: 0.85rem;
+            color: var(--blue-glow);
+        }
+
+        /* ==================== CONTATO ==================== */
+        .contact-area {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 50px;
+            justify-content: space-between;
+            align-items: center;
+        }
+        .contact-buttons {
+            display: flex;
+            gap: 24px;
+            flex-wrap: wrap;
+        }
+
+        /* ==================== FOOTER ==================== */
+        footer {
+            padding: 40px 0;
+            border-top: 1px solid rgba(10, 102, 194, 0.3);
+            text-align: center;
+            font-size: 0.85rem;
+        }
+
+        /* ==================== RESPONSIVIDADE ==================== */
+        @media (max-width: 860px) {
+            .nav-links {
+                display: none;
+                flex-direction: column;
+                width: 100%;
+                background: #000000dd;
+                backdrop-filter: blur(20px);
+                padding: 24px;
+                border-radius: 28px;
+                margin-top: 18px;
+                gap: 1.5rem;
+            }
+            .nav-links.active {
+                display: flex;
+            }
+            .menu-icon {
+                display: block;
+            }
+            .nav-container {
+                flex-wrap: wrap;
+            }
+            .hero {
+                flex-direction: column;
+            }
+            .flow-steps {
+                flex-direction: column;
+            }
+            .contact-area {
+                flex-direction: column;
+                text-align: center;
+            }
+            .logo-img {
+                height: 38px;
+            }
+            .logo-text {
+                font-size: 1.55rem;
+            }
+        }
+
+        /* Utilitário para texto com brilho azul */
+        .text-glow {
+            color: var(--blue-glow);
+        }
+
+        /* Team Section */
+.team-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
+    gap: 28px;
+    margin-top: 20px;
+}
+.team-member {
+    background: #0c0f16;
+    border-radius: 32px;
+    overflow: hidden;
+    transition: transform 0.3s ease, box-shadow 0.3s;
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    text-align: center;
+    padding-bottom: 24px;
+}
+.team-member:hover {
+    transform: translateY(-8px);
+    border-color: var(--blue-electric);
+    box-shadow: 0 20px 25px -12px rgba(0, 168, 255, 0.3);
+}
+.team-img {
+    width: 100%;
+    aspect-ratio: 1 / 1;
+    object-fit: cover;
+    background: #1a1f2a;
+    transition: 0.3s;
+}
+.team-info {
+    padding: 20px 16px 16px;
+}
+.team-info h3 {
+    font-size: 1.5rem;
+    margin-bottom: 6px;
+}
+.team-role {
+    color: var(--blue-electric);
+    font-weight: 600;
+    margin-bottom: 12px;
+    font-size: 0.85rem;
+    letter-spacing: 1px;
+}
+.team-bio {
+    font-size: 0.85rem;
+    color: var(--gray-muted);
+    margin-bottom: 16px;
+    line-height: 1.4;
+}
+.team-social {
+    display: flex;
+    justify-content: center;
+    gap: 16px;
+}
+.team-social a {
+    color: var(--gray-muted);
+    font-size: 1.2rem;
+    transition: 0.2s;
+}
+.team-social a:hover {
+    color: var(--blue-electric);
+}
+
+/* Container dos Comentários */
+.reviews-marquee {
+    padding: 80px 0;
+    overflow: hidden;
+    background: #000;
+    display: flex;
+    flex-direction: column;
+    gap: 40px;
+}
+
+.marquee-line {
+    display: flex;
+    white-space: nowrap;
+    gap: 30px;
+    padding: 20px 0;
+}
+
+/* Estilo do Card Quadrado */
+.review-item {
+    display: flex;
+    flex-direction: column;
+    justify-content: space-between;
+    min-width: 320px; /* Largura fixa para manter o formato de card */
+    min-height: 180px; /* Altura para não ser uma linha fina */
+    background: #0a0a0a;
+    padding: 30px;
+    border-radius: 4px; /* Cantos mais "secos" / quadrados */
+    border: 1px solid rgba(0, 168, 255, 0.2);
+    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
+    transition: border-color 0.3s ease;
+    flex-shrink: 0;
+}
+
+.review-item:hover {
+    border-color: var(--blue-electric);
+}
+
+.review-item i {
+    color: var(--blue-electric);
+    font-size: 1.2rem;
+    margin-bottom: 15px;
+}
+
+.review-text {
+    font-style: normal;
+    font-size: 1rem;
+    line-height: 1.6;
+    color: #eaeef5;
+    white-space: normal; /* Permite que o texto quebre linhas dentro do card */
+    margin-bottom: 20px;
+}
+
+.review-author {
+    font-weight: 700;
+    color: var(--blue-glow);
+    font-size: 0.85rem;
+    text-transform: uppercase;
+    letter-spacing: 1px;
+    display: block;
+}
+
+/* Animações (mantidas, mas com ajuste de tempo se necessário) */
+.scroll-left { animation: scrollLeft 50s linear infinite; }
+.scroll-right { animation: scrollRight 50s linear infinite; }
+
+@keyframes scrollLeft {
+    from { transform: translateX(0); }
+    to { transform: translateX(-50%); }
+}
+
+@keyframes scrollRight {
+    from { transform: translateX(-50%); }
+    to { transform: translateX(0); }
+}
+
+    </style>
+</head>
+<body>
+
+
+    
+<!-- ==================== MENU DE NAVEGAÇÃO (STICKY + MOBILE) ==================== -->
+<nav class="navbar">
+    <div class="container nav-container">
+        <!-- Logo: imagem + texto centralizado verticalmente -->
+        <a href="#" class="logo-imaf">
+            <img src="logo.webp" alt="Quasar Media" class="logo-img">
+            <span class="logo-text">Quasar<span style="font-weight: 300; color: var(--blue-glow);">.media</span></span>
+        </a>
+
+        <!-- Botão hambúrguer (mobile) -->
+        <div class="menu-icon" id="menuToggle">
+            <i class="fas fa-bars"></i>
+        </div>
+
+        <!-- Links desktop / mobile (toggle) -->
+        <ul class="nav-links" id="navLinks">
+            <li><a href="#home">Início</a></li>
+            <li><a href="#servicos">Serviços</a></li>
+            <li><a href="#trabalhos">Trabalhos</a></li>
+            <li><a href="#team">Time</a></li> 
+            <li><a href="#fluxo">Fluxo Criativo</a></li>
+            <li><a href="#contato">Contato</a></li>
+            <li>
+                <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-outline" style="padding: 8px 20px;">
+                    <i class="fab fa-instagram"></i> Seguir
+                </a>
+            </li>
+        </ul>
+    </div>
+</nav>
+
+<main>
+    <!-- ==================== SEÇÃO HERO (HOME) ==================== -->
+    <section id="home">
+        <div class="container hero">
+            <!-- Lado esquerdo: chamada principal -->
+            <div class="hero-content">
+                <div class="section-sub">AGÊNCIA QUASAR MEDIA</div>
+                <h1>narrative visual em<br>seu estado mais puro.</h1>
+                <p style="font-size: 1.2rem; max-width: 550px;">Conteúdo criativo, tráfego inteligente e resultados reais. <strong class="text-glow">+100 marcas impulsionadas no digital</strong>.</p>
+                
+                <!-- Bloco de estatísticas rápidas -->
+                <div class="hero-stats">
+                    <div class="stat-item"><span class="stat-number">100+</span><br>Marcas impulsionadas</div>
+                    <div class="stat-item"><span class="stat-number">11</span><br>Posts em destaque</div>
+                    <div class="stat-item"><span class="stat-number">117</span><br>Seguidores orgânicos</div>
+                </div>
+                
+                <!-- Badges de diferenciais -->
+                <div class="hero-badges">
+                    <span class="badge-local"><i class="fas fa-map-marker-alt"></i> Belém-PA</span>
+                    <span class="badge-local"><i class="fas fa-chart-line"></i> Tráfego inteligente</span>
+                    <span class="badge-local"><i class="fas fa-bolt"></i> Resultados reais</span>
+                </div>
+                
+                <!-- Botões de ação principais -->
+                <div style="margin-top: 32px; display: flex; gap: 18px; flex-wrap: wrap;">
+                    <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-primary">
+                        <i class="fab fa-instagram"></i> Seguir @agenciaquasar.media
+                    </a>
+                    <a href="#contato" class="btn-outline">
+                        <i class="fas fa-paper-plane"></i> Enviar mensagem
+                    </a>
+                </div>
+            </div>
+
+            <!-- Lado direito: card simulando perfil do Instagram -->
+            <div class="hero-right">
+                <div class="instagram-card">
+                    <i class="fab fa-instagram" style="font-size: 2rem; color: #d62976;"></i>
+                    <h3 style="margin: 8px 0;">@agenciaquasar.media</h3>
+                    <div class="insta-stats">
+                        <div><strong>11</strong> posts</div>
+                        <div><strong>117</strong> seguidores</div>
+                        <div><strong>41</strong> seguindo</div>
+                    </div>
+                    <div style="font-size: 0.8rem; margin-top: 12px;">✨ +100 marcas no digital</div>
+                    <hr style="border-color: #1e2a3a; margin: 12px 0;">
+                    <div style="display: flex; justify-content: center; gap: 12px;">
+                        <i class="fab fa-instagram"></i> <span>Conteúdo criativo</span>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SEÇÃO RESULTADOS (MÉTRICAS) ==================== -->
+    <section>
+        <div class="container">
+            <div class="section-sub">METRICS & IMPACTOS</div>
+            <h2>Resultados que falam por si</h2>
+            <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-top: 40px;">
+                <!-- Card 1 -->
+                <div style="flex:1; background: #0a0c12; border-radius: 32px; padding: 30px; text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--blue-electric);">+100</div>
+                    <div>marcas aceleradas</div>
+                    <small style="color: var(--gray-muted);">de pequenos a grandes negócios</small>
+                </div>
+                <!-- Card 2 -->
+                <div style="flex:1; background: #0a0c12; border-radius: 32px; padding: 30px; text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--blue-electric);">3.2x</div>
+                    <div>ROI médio em campanhas</div>
+                    <small style="color: var(--gray-muted);">tráfego inteligente</small>
+                </div>
+                <!-- Card 3 -->
+                <div style="flex:1; background: #0a0c12; border-radius: 32px; padding: 30px; text-align: center;">
+                    <div style="font-size: 3rem; font-weight: 800; color: var(--blue-electric);">98%</div>
+                    <div>satisfação dos clientes</div>
+                    <small style="color: var(--gray-muted);">conteúdo + estratégia</small>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== SERVIÇOS ==================== -->
+    <section id="servicos">
+        <div class="container">
+            <div class="section-sub">O QUE FAZEMOS</div>
+            <h2>Conteúdo criativo, tráfego inteligente</h2>
+            <div class="services-grid">
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-pen-fancy"></i></div>
+                    <h3>Criação de Conteúdo</h3>
+                    <p>Design, copy e vídeo para gerar conexão autêntica com seu público. Narrative visual em cada peça.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chart-simple"></i></div>
+                    <h3>Tráfego Inteligente</h3>
+                    <p>Campanhas escaláveis com dados, ROI real e segmentação de alta performance.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-bullhorn"></i></div>
+                    <h3>Social Media & Branding</h3>
+                    <p>Gestão estratégica de perfis, identidade visual e posicionamento de marca.</p>
+                </div>
+                <div class="service-card">
+                    <div class="service-icon"><i class="fas fa-chalkboard-user"></i></div>
+                    <h3>Business Academy</h3>
+                    <p>Mentoria e capacitação para negócios que desejam dominar o digital.</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== PORTFÓLIO / CLIENTES ==================== -->
+    <section id="trabalhos">
+        <div class="container">
+            <div class="section-sub">PORTFÓLIO & PARCERIAS</div>
+            <h2>Marcas que impulsionamos</h2>
+            <div class="clients-grid">
+                <div class="client-item"><i class="fas fa-graduation-cap" style="margin-right: 8px;"></i> BUSINESS ACADEMY</div>
+                <div class="client-item"><i class="fas fa-music"></i> FLZ</div>
+                <div class="client-item"><i class="fas fa-calendar-alt"></i> ANO NOVO</div>
+                <div class="client-item"><i class="fas fa-hotel"></i> HOTEL MAIORANA</div>
+                <div class="client-item"><i class="fas fa-chalkboard"></i> ACADEMY</div>
+                <div class="client-item"><i class="fas fa-star-of-life"></i> VERIDADES DOLORIDAS</div>
+            </div>
+
+            <div class="reviews-marquee">
+    <div class="marquee-line scroll-left" id="linha-1-marquee">
+        </div>
+    <div class="marquee-line scroll-right" id="linha-2-marquee">
+        </div>
+</div>
+
+            <div style="margin-top: 45px; text-align: center; background: #0c0f16; border-radius: 60px; padding: 20px;">
+                <span style="font-weight: 600; letter-spacing: 1px;">⚡ +100 marcas impulsionadas no digital ⚡</span>
+            </div>
+        </div>
+    </section>
+    <!-- ==================== SEÇÃO DE EQUIPE (DESTAQUE) ==================== -->
+         <!-- SEÇÃO: NOSSO TIME -->
+    <section id="team">
+        <div class="container">
+            <div class="section-sub">QUEM FAZ ACONTECER</div>
+            <h2>Time Quasar Media</h2>
+            <p style="margin-bottom: 40px; color: var(--gray-muted);">Criativos, estrategistas e visionários unidos para transformar marcas.</p>
+            <div class="team-grid">
+                <div class="team-member">
+                    <img class="team-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Marina Castro">
+                    <div class="team-info">
+                        <h3>Marina Castro</h3>
+                        <div class="team-role">Diretora Criativa</div>
+                        <div class="team-bio">Narrative visual expert. 10+ anos construindo identidades que emocionam.</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img class="team-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rafael Mendes">
+                    <div class="team-info">
+                        <h3>Rafael Mendes</h3>
+                        <div class="team-role">Head de Tráfego & Dados</div>
+                        <div class="team-bio">Estratégias de ROI comprovado, mais de R$20M gerenciados em mídia.</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img class="team-img" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Camila Salles">
+                    <div class="team-info">
+                        <h3>Camila Salles</h3>
+                        <div class="team-role">Social Media Strategist</div>
+                        <div class="team-bio">Conteúdo que engaja e comunidades que crescem com propósito.</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+                <div class="team-member">
+                    <img class="team-img" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Lucas Andrade">
+                    <div class="team-info">
+                        <h3>Lucas Andrade</h3>
+                        <div class="team-role">Motion & Design Lead</div>
+                        <div class="team-bio">Visual storytelling e experiências imersivas para o digital.</div>
+                        <div class="team-social">
+                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
+                            <a href="#"><i class="fab fa-instagram"></i></a>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== FLUXO CRIATIVO (ETAPAS) ==================== -->
+    <section id="fluxo">
+        <div class="container">
+            <div class="section-sub">NOSSO PROCESSO</div>
+            <h2>Fluxo Criativo</h2>
+            <div class="flow-steps">
+                <div class="step"><div class="step-number">01</div><h3>Imersão</h3><p>Briefing e análise de mercado para extrair a essência da sua marca.</p></div>
+                <div class="step"><div class="step-number">02</div><h3>Criação</h3><p>Ideias, conceitos visuais e narrativas autênticas que geram impacto.</p></div>
+                <div class="step"><div class="step-number">03</div><h3>Estratégia de Tráfego</h3><p>Mídia paga e orgânica alinhadas, segmentação inteligente.</p></div>
+                <div class="step"><div class="step-number">04</div><h3>Resultados Reais</h3><p>Monitoramento, otimização contínua e relatórios transparentes.</p></div>
+            </div>
+        </div>
+    </section>
+
+    <!-- ==================== BLOCO NARRATIVO (CITAÇÃO DE MARCA) ==================== -->
+    <div class="container">
+        <div class="narrative-block">
+            <p>“narrative visual em<br>seu estado mais puro.”</p>
+            <div class="narrative-small">Veridades Doloridas · Conceito & Expressão Visual</div>
+            <i class="fas fa-quote-right" style="font-size: 2rem; opacity: 0.4; margin-top: 20px; display: block;"></i>
+        </div>
+    </div>
+
+    <!-- ==================== CONTATO / REDES ==================== -->
+    <section id="contato">
+        <div class="container contact-area">
+            <div>
+                <div class="section-sub">VAMOS CONVERSAR</div>
+                <h2>Quer elevar sua marca? <br>Resultados que falam por si.</h2>
+                <p style="margin: 20px 0;">Siga nosso trabalho no Instagram e veja cases reais. Pronto para acelerar?</p>
+                <div class="contact-buttons">
+                    <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-primary">
+                        <i class="fab fa-instagram"></i> Seguir @agenciaquasar.media
+                    </a>
+                    <a href="https://www.instagram.com/direct/t/agenciaquasar.media" target="_blank" class="btn-outline">
+                        <i class="fas fa-envelope"></i> Enviar mensagem (Direct)
+                    </a>
+                </div>
+                <div style="margin-top: 30px;">
+                    <p><i class="fas fa-map-pin"></i> Belém - Pará, Brasil</p>
+                    <p><i class="fas fa-envelope"></i> contato@quasar.media (em breve)</p>
+                </div>
+            </div>
+            <div style="background: #0c0e15; border-radius: 32px; padding: 30px; min-width: 240px; text-align: center;">
+                <i class="fab fa-instagram" style="font-size: 3rem; color: #d62976;"></i>
+                <p style="margin-top: 10px;"><strong>@agenciaquasar.media</strong></p>
+                <p>+100 marcas<br>Conteúdo criativo + tráfego inteligente</p>
+                <hr style="margin: 16px 0;">
+                <div><i class="fas fa-chart-line"></i> Resultados reais</div>
+            </div>
+        </div>
+    </section>
+</main>
+
+<!-- ==================== FOOTER ==================== -->
+<footer>
+    <div class="container">
+        <div class="logo" style="font-size: 1.4rem; margin-bottom: 20px;">quasar<span>.media</span></div>
+        <p>© 2025 Quasar Media — Agência de marketing digital | Conteúdo criativo, tráfego inteligente e resultados reais</p>
+        <div style="margin-top: 20px;">
+            <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" style="color: var(--blue-electric); margin: 0 12px;">
+                <i class="fab fa-instagram fa-lg"></i>
+            </a>
+            <span style="color: var(--gray-muted);">Belém-PA</span>
+        </div>
+    </div>
+</footer>
+
+<!-- ==================== JAVASCRIPT (MENU MOBILE + SMOOTH SCROLL) ==================== -->
+<script>
+    // Alterna a visibilidade do menu mobile (classe 'active')
+    const menuToggle = document.getElementById('menuToggle');
+    const navLinks = document.getElementById('navLinks');
+    menuToggle.addEventListener('click', () => {
+        navLinks.classList.toggle('active');
+    });
+
+    // Fecha o menu automaticamente ao clicar em qualquer link (evita que fique aberto após navegação)
+    document.querySelectorAll('.nav-links a').forEach(link => {
+        link.addEventListener('click', () => {
+            navLinks.classList.remove('active');
+        });
+    });
+
+    // Rolagem suave para links internos (âncoras #)
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function(e) {
+            const targetId = this.getAttribute('href');
+            if (targetId === "#") return; // Evita comportamento padrão se for apenas '#'
+            const targetElement = document.querySelector(targetId);
+            if (targetElement) {
+                e.preventDefault();
+                targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
+            }
+        });
+    });
+
+    async function carregarDepoimentos() {
+    try {
+        const resposta = await fetch('depoimentos.json');
+        if (!resposta.ok) throw new Error("Não foi possível carregar o JSON");
+        
+        const dados = await resposta.json();
+        console.log("Dados carregados com sucesso:", dados); // Verifica no console (F12) se isto aparece
+
+        const linha1Container = document.getElementById('linha-1-marquee');
+        const linha2Container = document.getElementById('linha-2-marquee');
+
+        const criarCard = (item) => `
+            <div class="review-item">
+                <i class="fas fa-quote-right"></i>
+                <p class="review-text">${item.texto}</p>
+                <span class="review-author">${item.autor}</span>
+            </div>
+        `;
+
+        // Gerar o conteúdo
+        const conteudo1 = dados.linha1.map(criarCard).join('');
+        const conteudo2 = dados.linha2.map(criarCard).join('');
+
+        // Inserir e duplicar para o loop infinito
+        linha1Container.innerHTML = conteudo1 + conteudo1;
+        linha2Container.innerHTML = conteudo2 + conteudo2;
+
+    } catch (erro) {
+        console.error("Erro detalhado:", erro);
+    }
+}
+
+carregarDepoimentos();
+}
+</script>
+</body>
+</html>
