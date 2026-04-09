@@ -5,25 +5,17 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
     <title>Quasar Media | Agência de Marketing Digital</title>
     <meta name="description" content="Conteúdo criativo, tráfego inteligente e resultados reais. +100 marcas impulsionadas no digital. Agência Quasar Media - Belém/PA">
-    
-    <!-- ==================== FONTS & ICONS ==================== -->
-    <!-- Google Fonts: Inter (modern sans-serif) -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:opsz,wght@14..32,300;14..32,400;14..32,500;14..32,600;14..32,700;14..32,800&display=swap" rel="stylesheet">
-    <!-- Font Awesome 6 (ícones) -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
-
     <style>
-        /* ==================== RESET & VARIÁVEIS GLOBAIS ==================== */
-        /* Reset básico para consistência entre navegadores */
         * {
             margin: 0;
             padding: 0;
             box-sizing: border-box;
         }
 
-        /* Corpo escuro, tipografia limpa e suave */
         body {
             background-color: #000000;
             font-family: 'Inter', sans-serif;
@@ -32,7 +24,7 @@
             scroll-behavior: smooth;
         }
 
-        /* Paleta de cores (design system) */
+        /* Cores e variáveis */
         :root {
             --black-deep: #000000;
             --black-rich: #0a0a0a;
@@ -43,9 +35,10 @@
             --blue-dark: #0a4c8a;
             --gray-muted: #b0b8c5;
             --white-soft: #f0f4fa;
+            --border-glow: rgba(0, 168, 255, 0.25);
         }
 
-        /* Scrollbar personalizada (visual futurista) */
+        /* Scrollbar customizada */
         ::-webkit-scrollbar {
             width: 6px;
         }
@@ -57,29 +50,28 @@
             border-radius: 8px;
         }
 
-        /* Container centralizador com padding lateral responsivo */
+        /* Layout base */
         .container {
             max-width: 1300px;
             margin: 0 auto;
             padding: 0 24px;
         }
 
-        /* Seções espaçadas e com borda sutil de destaque */
         section {
             padding: 80px 0;
             border-bottom: 1px solid rgba(10, 102, 194, 0.2);
         }
+
         section:last-child {
             border-bottom: none;
         }
 
-        /* ==================== TIPOGRAFIA ==================== */
+        /* Tipografia */
         h1, h2, h3 {
             font-weight: 700;
             letter-spacing: -0.02em;
         }
 
-        /* Título hero com gradiente azul/branco */
         h1 {
             font-size: clamp(2.8rem, 8vw, 5rem);
             line-height: 1.1;
@@ -90,7 +82,6 @@
             margin-bottom: 1.25rem;
         }
 
-        /* Títulos de seção com linha decorativa abaixo */
         h2 {
             font-size: clamp(2rem, 5vw, 2.8rem);
             margin-bottom: 2rem;
@@ -108,7 +99,6 @@
             border-radius: 4px;
         }
 
-        /* Subtítulo de seção (tags pequenas acima do h2) */
         .section-sub {
             color: var(--blue-glow);
             text-transform: uppercase;
@@ -118,63 +108,88 @@
             margin-bottom: 1rem;
         }
 
-        /* ==================== NAVBAR (MENU SUPERIOR) ==================== */
+        /* Navbar */
         .navbar {
             position: sticky;
             top: 0;
-            backdrop-filter: blur(16px);      /* Efeito vidro fosco */
+            backdrop-filter: blur(16px);
             background: rgba(0, 0, 0, 0.75);
             z-index: 1000;
             padding: 18px 0;
             border-bottom: 1px solid rgba(0, 168, 255, 0.2);
         }
-
         .nav-container {
             display: flex;
             justify-content: space-between;
             align-items: center;
             flex-wrap: wrap;
         }
-
-        /* Logo: imagem + texto alinhados verticalmente */
-        .logo-imaf {
-            display: flex;
-            align-items: center;
-            gap: 12px;
-            text-decoration: none;
-            color: inherit;
-        }
-
-        .logo-img {
-            height: 50px;
-            width: auto;
-            object-fit: contain;
-            filter: drop-shadow(0 2px 6px rgba(0, 168, 255, 0.35));
-            transition: transform 0.3s ease;
-        }
-        .logo-img:hover {
-            transform: scale(1.05);
-        }
-
-        .logo-text {
-            font-size: 1.75rem;
+        .logo {
+            font-size: 1.8rem;
             font-weight: 800;
             letter-spacing: -0.5px;
-            background: linear-gradient(120deg, #ffffff, var(--blue-electric));
+            background: linear-gradient(120deg, #fff, var(--blue-electric));
             -webkit-background-clip: text;
             background-clip: text;
             color: transparent;
-            line-height: 1;
+            text-decoration: none;
         }
+        .logo span {
+            font-weight: 300;
+            color: var(--blue-glow);
+            background: none;
+            -webkit-background-clip: unset;
+            background-clip: unset;
+        }
+/* ==================== LOGO ==================== */
+.logo-imaf {
+    display: flex;
+    align-items: center;
+    gap: 10px;           /* espaço entre a imagem e o texto */
+    text-decoration: none;
+    color: inherit;
+}
 
-        /* Links de navegação desktop */
+.logo-img {
+    height: 50px;                    /* tamanho principal da logo */
+    width: auto;                     /* mantém proporção */
+    object-fit: contain;             /* evita distorção */
+    filter: drop-shadow(0 2px 4px rgba(0, 168, 255, 0.3)); /* brilho sutil */
+    transition: transform 0.3s ease;
+}
+
+.logo-img:hover {
+    transform: scale(1.05);
+}
+
+/* Texto ao lado da logo */
+.logo-imaf span {
+    font-size: 1.75rem;
+    font-weight: 800;
+    letter-spacing: -0.5px;
+    background: linear-gradient(120deg, #ffffff, var(--blue-electric));
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    line-height: 1;
+}
+
+/* Versão mobile - reduz um pouco o tamanho */
+@media (max-width: 860px) {
+    .logo-img {
+        height: 36px;
+    }
+    
+    .logo-imaf span {
+        font-size: 1.55rem;
+    }
+}
         .nav-links {
             display: flex;
             gap: 2rem;
             align-items: center;
             list-style: none;
         }
-
         .nav-links a {
             color: #eaeef5;
             text-decoration: none;
@@ -185,8 +200,6 @@
         .nav-links a:hover {
             color: var(--blue-electric);
         }
-
-        /* Botão menu mobile (hambúrguer) */
         .menu-icon {
             display: none;
             font-size: 1.8rem;
@@ -194,7 +207,7 @@
             color: var(--blue-electric);
         }
 
-        /* ==================== BOTÕES GLOBAIS ==================== */
+        /* Botões */
         .btn-primary {
             background: linear-gradient(95deg, var(--blue-primary), var(--blue-electric));
             border: none;
@@ -211,9 +224,9 @@
         }
         .btn-primary:hover {
             transform: scale(1.02);
+            background: linear-gradient(95deg, #0a5bb3, #0090e6);
             box-shadow: 0 8px 20px rgba(0, 168, 255, 0.5);
         }
-
         .btn-outline {
             background: transparent;
             border: 1.5px solid var(--blue-electric);
@@ -231,7 +244,7 @@
             color: #fff;
         }
 
-        /* ==================== SEÇÃO HERO ==================== */
+        /* Hero Section */
         .hero {
             display: flex;
             flex-wrap: wrap;
@@ -288,13 +301,16 @@
             justify-content: space-around;
             margin: 15px 0;
         }
+        .insta-stats div {
+            text-align: center;
+        }
         .insta-stats strong {
             font-size: 1.3rem;
             display: block;
             color: white;
         }
 
-        /* ==================== CARDS DE SERVIÇOS ==================== */
+        /* Grids e cards */
         .services-grid, .clients-grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
@@ -334,7 +350,7 @@
             background: #0f1722;
         }
 
-        /* ==================== FLUXO CRIATIVO (STEPS) ==================== */
+        /* Fluxo Criativo (timeline) */
         .flow-steps {
             display: flex;
             flex-wrap: wrap;
@@ -358,7 +374,7 @@
             opacity: 0.7;
         }
 
-        /* ==================== BLOCO NARRATIVO (DESTAQUE) ==================== */
+        /* Narrative Visual */
         .narrative-block {
             background: linear-gradient(145deg, #03070f, #000000);
             border-radius: 48px;
@@ -381,7 +397,7 @@
             color: var(--blue-glow);
         }
 
-        /* ==================== CONTATO ==================== */
+        /* Contato e Redes */
         .contact-area {
             display: flex;
             flex-wrap: wrap;
@@ -394,8 +410,11 @@
             gap: 24px;
             flex-wrap: wrap;
         }
+        .insta-handle {
+            color: var(--blue-electric);
+            font-weight: 600;
+        }
 
-        /* ==================== FOOTER ==================== */
         footer {
             padding: 40px 0;
             border-top: 1px solid rgba(10, 102, 194, 0.3);
@@ -403,7 +422,7 @@
             font-size: 0.85rem;
         }
 
-        /* ==================== RESPONSIVIDADE ==================== */
+        /* Responsivo */
         @media (max-width: 860px) {
             .nav-links {
                 display: none;
@@ -435,229 +454,69 @@
                 flex-direction: column;
                 text-align: center;
             }
-            .logo-img {
-                height: 38px;
-            }
-            .logo-text {
-                font-size: 1.55rem;
-            }
         }
-
-        /* Utilitário para texto com brilho azul */
+        .btn-icon {
+            margin-right: 8px;
+        }
+        a {
+            text-decoration: none;
+        }
         .text-glow {
             color: var(--blue-glow);
         }
-
-        /* Team Section */
-.team-grid {
-    display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(260px, 1fr));
-    gap: 28px;
-    margin-top: 20px;
-}
-.team-member {
-    background: #0c0f16;
-    border-radius: 32px;
-    overflow: hidden;
-    transition: transform 0.3s ease, box-shadow 0.3s;
-    border: 1px solid rgba(0, 168, 255, 0.2);
-    text-align: center;
-    padding-bottom: 24px;
-}
-.team-member:hover {
-    transform: translateY(-8px);
-    border-color: var(--blue-electric);
-    box-shadow: 0 20px 25px -12px rgba(0, 168, 255, 0.3);
-}
-.team-img {
-    width: 100%;
-    aspect-ratio: 1 / 1;
-    object-fit: cover;
-    background: #1a1f2a;
-    transition: 0.3s;
-}
-.team-info {
-    padding: 20px 16px 16px;
-}
-.team-info h3 {
-    font-size: 1.5rem;
-    margin-bottom: 6px;
-}
-.team-role {
-    color: var(--blue-electric);
-    font-weight: 600;
-    margin-bottom: 12px;
-    font-size: 0.85rem;
-    letter-spacing: 1px;
-}
-.team-bio {
-    font-size: 0.85rem;
-    color: var(--gray-muted);
-    margin-bottom: 16px;
-    line-height: 1.4;
-}
-.team-social {
-    display: flex;
-    justify-content: center;
-    gap: 16px;
-}
-.team-social a {
-    color: var(--gray-muted);
-    font-size: 1.2rem;
-    transition: 0.2s;
-}
-.team-social a:hover {
-    color: var(--blue-electric);
-}
-
-/* Container dos Comentários */
-.reviews-marquee {
-    padding: 80px 0;
-    overflow: hidden;
-    background: #000;
-    display: flex;
-    flex-direction: column;
-    gap: 40px;
-}
-
-.marquee-line {
-    display: flex;
-    white-space: nowrap;
-    gap: 30px;
-    padding: 20px 0;
-}
-
-/* Estilo do Card Quadrado */
-.review-item {
-    display: flex;
-    flex-direction: column;
-    justify-content: space-between;
-    min-width: 320px; /* Largura fixa para manter o formato de card */
-    min-height: 180px; /* Altura para não ser uma linha fina */
-    background: #0a0a0a;
-    padding: 30px;
-    border-radius: 4px; /* Cantos mais "secos" / quadrados */
-    border: 1px solid rgba(0, 168, 255, 0.2);
-    box-shadow: 0 10px 30px rgba(0, 0, 0, 0.5);
-    transition: border-color 0.3s ease;
-    flex-shrink: 0;
-}
-
-.review-item:hover {
-    border-color: var(--blue-electric);
-}
-
-.review-item i {
-    color: var(--blue-electric);
-    font-size: 1.2rem;
-    margin-bottom: 15px;
-}
-
-.review-text {
-    font-style: normal;
-    font-size: 1rem;
-    line-height: 1.6;
-    color: #eaeef5;
-    white-space: normal; /* Permite que o texto quebre linhas dentro do card */
-    margin-bottom: 20px;
-}
-
-.review-author {
-    font-weight: 700;
-    color: var(--blue-glow);
-    font-size: 0.85rem;
-    text-transform: uppercase;
-    letter-spacing: 1px;
-    display: block;
-}
-
-/* Animações (mantidas, mas com ajuste de tempo se necessário) */
-.scroll-left { animation: scrollLeft 50s linear infinite; }
-.scroll-right { animation: scrollRight 50s linear infinite; }
-
-@keyframes scrollLeft {
-    from { transform: translateX(0); }
-    to { transform: translateX(-50%); }
-}
-
-@keyframes scrollRight {
-    from { transform: translateX(-50%); }
-    to { transform: translateX(0); }
-}
-
     </style>
 </head>
 <body>
 
-
-    
-<!-- ==================== MENU DE NAVEGAÇÃO (STICKY + MOBILE) ==================== -->
 <nav class="navbar">
     <div class="container nav-container">
-        <!-- Logo: imagem + texto centralizado verticalmente -->
-        <a href="#" class="logo-imaf">
-            <img src="logo.webp" alt="Quasar Media" class="logo-img">
-            <span class="logo-text">Quasar<span style="font-weight: 300; color: var(--blue-glow);">.media</span></span>
-        </a>
-
-        <!-- Botão hambúrguer (mobile) -->
+          <a href="#" class="logo"> 
+               <img src="logo.webp" alt="Quasar Media" class="logo-img">
+               Quasar<span>.Media</span>
+          </a>
         <div class="menu-icon" id="menuToggle">
             <i class="fas fa-bars"></i>
         </div>
-
-        <!-- Links desktop / mobile (toggle) -->
         <ul class="nav-links" id="navLinks">
             <li><a href="#home">Início</a></li>
             <li><a href="#servicos">Serviços</a></li>
             <li><a href="#trabalhos">Trabalhos</a></li>
-            <li><a href="#team">Time</a></li> 
             <li><a href="#fluxo">Fluxo Criativo</a></li>
             <li><a href="#contato">Contato</a></li>
-            <li>
-                <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-outline" style="padding: 8px 20px;">
-                    <i class="fab fa-instagram"></i> Seguir
-                </a>
-            </li>
+            <li><a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-outline" style="padding: 8px 20px;"><i class="fab fa-instagram"></i> Seguir</a></li>
         </ul>
     </div>
 </nav>
 
 <main>
-    <!-- ==================== SEÇÃO HERO (HOME) ==================== -->
+    <!-- Hero / Home -->
     <section id="home">
         <div class="container hero">
-            <!-- Lado esquerdo: chamada principal -->
             <div class="hero-content">
                 <div class="section-sub">AGÊNCIA QUASAR MEDIA</div>
                 <h1>narrative visual em<br>seu estado mais puro.</h1>
                 <p style="font-size: 1.2rem; max-width: 550px;">Conteúdo criativo, tráfego inteligente e resultados reais. <strong class="text-glow">+100 marcas impulsionadas no digital</strong>.</p>
                 
-                <!-- Bloco de estatísticas rápidas -->
                 <div class="hero-stats">
                     <div class="stat-item"><span class="stat-number">100+</span><br>Marcas impulsionadas</div>
                     <div class="stat-item"><span class="stat-number">11</span><br>Posts em destaque</div>
                     <div class="stat-item"><span class="stat-number">117</span><br>Seguidores orgânicos</div>
                 </div>
                 
-                <!-- Badges de diferenciais -->
                 <div class="hero-badges">
                     <span class="badge-local"><i class="fas fa-map-marker-alt"></i> Belém-PA</span>
                     <span class="badge-local"><i class="fas fa-chart-line"></i> Tráfego inteligente</span>
                     <span class="badge-local"><i class="fas fa-bolt"></i> Resultados reais</span>
                 </div>
                 
-                <!-- Botões de ação principais -->
                 <div style="margin-top: 32px; display: flex; gap: 18px; flex-wrap: wrap;">
-                    <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-primary">
-                        <i class="fab fa-instagram"></i> Seguir @agenciaquasar.media
-                    </a>
-                    <a href="#contato" class="btn-outline">
-                        <i class="fas fa-paper-plane"></i> Enviar mensagem
-                    </a>
+                    <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-primary"><i class="fab fa-instagram"></i> Seguir @agenciaquasar.media</a>
+                    <a href="#contato" class="btn-outline"><i class="fas fa-paper-plane"></i> Enviar mensagem</a>
                 </div>
             </div>
 
-            <!-- Lado direito: card simulando perfil do Instagram -->
+
+            <!-- aleterar isso por uma imagem de chamada-->
             <div class="hero-right">
                 <div class="instagram-card">
                     <i class="fab fa-instagram" style="font-size: 2rem; color: #d62976;"></i>
@@ -673,29 +532,28 @@
                         <i class="fab fa-instagram"></i> <span>Conteúdo criativo</span>
                     </div>
                 </div>
+           <!-- aleterar isso por uma imagem de chamada / fim do div-->
+
             </div>
         </div>
     </section>
 
-    <!-- ==================== SEÇÃO RESULTADOS (MÉTRICAS) ==================== -->
+    <!-- Resultados que falam por si -->
     <section>
         <div class="container">
             <div class="section-sub">METRICS & IMPACTOS</div>
             <h2>Resultados que falam por si</h2>
             <div style="display: flex; flex-wrap: wrap; gap: 40px; justify-content: space-between; margin-top: 40px;">
-                <!-- Card 1 -->
                 <div style="flex:1; background: #0a0c12; border-radius: 32px; padding: 30px; text-align: center;">
                     <div style="font-size: 3rem; font-weight: 800; color: var(--blue-electric);">+100</div>
                     <div>marcas aceleradas</div>
                     <small style="color: var(--gray-muted);">de pequenos a grandes negócios</small>
                 </div>
-                <!-- Card 2 -->
                 <div style="flex:1; background: #0a0c12; border-radius: 32px; padding: 30px; text-align: center;">
                     <div style="font-size: 3rem; font-weight: 800; color: var(--blue-electric);">3.2x</div>
                     <div>ROI médio em campanhas</div>
                     <small style="color: var(--gray-muted);">tráfego inteligente</small>
                 </div>
-                <!-- Card 3 -->
                 <div style="flex:1; background: #0a0c12; border-radius: 32px; padding: 30px; text-align: center;">
                     <div style="font-size: 3rem; font-weight: 800; color: var(--blue-electric);">98%</div>
                     <div>satisfação dos clientes</div>
@@ -705,7 +563,7 @@
         </div>
     </section>
 
-    <!-- ==================== SERVIÇOS ==================== -->
+    <!-- Serviços -->
     <section id="servicos">
         <div class="container">
             <div class="section-sub">O QUE FAZEMOS</div>
@@ -735,7 +593,7 @@
         </div>
     </section>
 
-    <!-- ==================== PORTFÓLIO / CLIENTES ==================== -->
+    <!-- Trabalhos / Clientes (inspirado na imagem) -->
     <section id="trabalhos">
         <div class="container">
             <div class="section-sub">PORTFÓLIO & PARCERIAS</div>
@@ -748,80 +606,13 @@
                 <div class="client-item"><i class="fas fa-chalkboard"></i> ACADEMY</div>
                 <div class="client-item"><i class="fas fa-star-of-life"></i> VERIDADES DOLORIDAS</div>
             </div>
-
-            <div class="reviews-marquee">
-    <div class="marquee-line scroll-left" id="linha-1-marquee">
-        </div>
-    <div class="marquee-line scroll-right" id="linha-2-marquee">
-        </div>
-</div>
-
             <div style="margin-top: 45px; text-align: center; background: #0c0f16; border-radius: 60px; padding: 20px;">
                 <span style="font-weight: 600; letter-spacing: 1px;">⚡ +100 marcas impulsionadas no digital ⚡</span>
             </div>
         </div>
     </section>
-    <!-- ==================== SEÇÃO DE EQUIPE (DESTAQUE) ==================== -->
-         <!-- SEÇÃO: NOSSO TIME -->
-    <section id="team">
-        <div class="container">
-            <div class="section-sub">QUEM FAZ ACONTECER</div>
-            <h2>Time Quasar Media</h2>
-            <p style="margin-bottom: 40px; color: var(--gray-muted);">Criativos, estrategistas e visionários unidos para transformar marcas.</p>
-            <div class="team-grid">
-                <div class="team-member">
-                    <img class="team-img" src="https://randomuser.me/api/portraits/women/68.jpg" alt="Marina Castro">
-                    <div class="team-info">
-                        <h3>Marina Castro</h3>
-                        <div class="team-role">Diretora Criativa</div>
-                        <div class="team-bio">Narrative visual expert. 10+ anos construindo identidades que emocionam.</div>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <img class="team-img" src="https://randomuser.me/api/portraits/men/32.jpg" alt="Rafael Mendes">
-                    <div class="team-info">
-                        <h3>Rafael Mendes</h3>
-                        <div class="team-role">Head de Tráfego & Dados</div>
-                        <div class="team-bio">Estratégias de ROI comprovado, mais de R$20M gerenciados em mídia.</div>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <img class="team-img" src="https://randomuser.me/api/portraits/women/45.jpg" alt="Camila Salles">
-                    <div class="team-info">
-                        <h3>Camila Salles</h3>
-                        <div class="team-role">Social Media Strategist</div>
-                        <div class="team-bio">Conteúdo que engaja e comunidades que crescem com propósito.</div>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-                <div class="team-member">
-                    <img class="team-img" src="https://randomuser.me/api/portraits/men/75.jpg" alt="Lucas Andrade">
-                    <div class="team-info">
-                        <h3>Lucas Andrade</h3>
-                        <div class="team-role">Motion & Design Lead</div>
-                        <div class="team-bio">Visual storytelling e experiências imersivas para o digital.</div>
-                        <div class="team-social">
-                            <a href="#"><i class="fab fa-linkedin-in"></i></a>
-                            <a href="#"><i class="fab fa-instagram"></i></a>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-    </section>
 
-    <!-- ==================== FLUXO CRIATIVO (ETAPAS) ==================== -->
+    <!-- Fluxo Criativo (etapas) -->
     <section id="fluxo">
         <div class="container">
             <div class="section-sub">NOSSO PROCESSO</div>
@@ -835,7 +626,7 @@
         </div>
     </section>
 
-    <!-- ==================== BLOCO NARRATIVO (CITAÇÃO DE MARCA) ==================== -->
+    <!-- Narrative visual puro (inspirado na legenda) -->
     <div class="container">
         <div class="narrative-block">
             <p>“narrative visual em<br>seu estado mais puro.”</p>
@@ -844,7 +635,7 @@
         </div>
     </div>
 
-    <!-- ==================== CONTATO / REDES ==================== -->
+    <!-- Contato + redes sociais -->
     <section id="contato">
         <div class="container contact-area">
             <div>
@@ -852,12 +643,8 @@
                 <h2>Quer elevar sua marca? <br>Resultados que falam por si.</h2>
                 <p style="margin: 20px 0;">Siga nosso trabalho no Instagram e veja cases reais. Pronto para acelerar?</p>
                 <div class="contact-buttons">
-                    <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-primary">
-                        <i class="fab fa-instagram"></i> Seguir @agenciaquasar.media
-                    </a>
-                    <a href="https://www.instagram.com/direct/t/agenciaquasar.media" target="_blank" class="btn-outline">
-                        <i class="fas fa-envelope"></i> Enviar mensagem (Direct)
-                    </a>
+                    <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" class="btn-primary"><i class="fab fa-instagram"></i> Seguir @agenciaquasar.media</a>
+                    <a href="https://www.instagram.com/direct/t/agenciaquasar.media" target="_blank" class="btn-outline"><i class="fas fa-envelope"></i> Enviar mensagem (Direct)</a>
                 </div>
                 <div style="margin-top: 30px;">
                     <p><i class="fas fa-map-pin"></i> Belém - Pará, Brasil</p>
@@ -875,83 +662,44 @@
     </section>
 </main>
 
-<!-- ==================== FOOTER ==================== -->
 <footer>
     <div class="container">
         <div class="logo" style="font-size: 1.4rem; margin-bottom: 20px;">quasar<span>.media</span></div>
         <p>© 2025 Quasar Media — Agência de marketing digital | Conteúdo criativo, tráfego inteligente e resultados reais</p>
         <div style="margin-top: 20px;">
-            <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" style="color: var(--blue-electric); margin: 0 12px;">
-                <i class="fab fa-instagram fa-lg"></i>
-            </a>
+            <a href="https://www.instagram.com/agenciaquasar.media/" target="_blank" style="color: var(--blue-electric); margin: 0 12px;"><i class="fab fa-instagram fa-lg"></i></a>
             <span style="color: var(--gray-muted);">Belém-PA</span>
         </div>
     </div>
 </footer>
 
-<!-- ==================== JAVASCRIPT (MENU MOBILE + SMOOTH SCROLL) ==================== -->
 <script>
-    // Alterna a visibilidade do menu mobile (classe 'active')
+    // Menu mobile toggle
     const menuToggle = document.getElementById('menuToggle');
     const navLinks = document.getElementById('navLinks');
     menuToggle.addEventListener('click', () => {
         navLinks.classList.toggle('active');
     });
 
-    // Fecha o menu automaticamente ao clicar em qualquer link (evita que fique aberto após navegação)
+    // Fechar menu ao clicar em qualquer link
     document.querySelectorAll('.nav-links a').forEach(link => {
         link.addEventListener('click', () => {
             navLinks.classList.remove('active');
         });
     });
 
-    // Rolagem suave para links internos (âncoras #)
+    // Smooth scroll para âncoras
     document.querySelectorAll('a[href^="#"]').forEach(anchor => {
         anchor.addEventListener('click', function(e) {
             const targetId = this.getAttribute('href');
-            if (targetId === "#") return; // Evita comportamento padrão se for apenas '#'
+            if(targetId === "#") return;
             const targetElement = document.querySelector(targetId);
-            if (targetElement) {
+            if(targetElement) {
                 e.preventDefault();
                 targetElement.scrollIntoView({ behavior: 'smooth', block: 'start' });
             }
         });
     });
-
-    async function carregarDepoimentos() {
-    try {
-        const resposta = await fetch('depoimentos.json');
-        if (!resposta.ok) throw new Error("Não foi possível carregar o JSON");
-        
-        const dados = await resposta.json();
-        console.log("Dados carregados com sucesso:", dados); // Verifica no console (F12) se isto aparece
-
-        const linha1Container = document.getElementById('linha-1-marquee');
-        const linha2Container = document.getElementById('linha-2-marquee');
-
-        const criarCard = (item) => `
-            <div class="review-item">
-                <i class="fas fa-quote-right"></i>
-                <p class="review-text">${item.texto}</p>
-                <span class="review-author">${item.autor}</span>
-            </div>
-        `;
-
-        // Gerar o conteúdo
-        const conteudo1 = dados.linha1.map(criarCard).join('');
-        const conteudo2 = dados.linha2.map(criarCard).join('');
-
-        // Inserir e duplicar para o loop infinito
-        linha1Container.innerHTML = conteudo1 + conteudo1;
-        linha2Container.innerHTML = conteudo2 + conteudo2;
-
-    } catch (erro) {
-        console.error("Erro detalhado:", erro);
-    }
-}
-
-carregarDepoimentos();
-}
 </script>
 </body>
 </html>
