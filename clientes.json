@@ -1,0 +1,36 @@
+{
+  "clients": [
+    {
+      "logo": "https://ui-avatars.com/api/?name=Business+Academy&background=0D8ABC&color=fff&size=128",
+      "name": "BUSINESS ACADEMY"
+    },
+    {
+      "logo": "https://ui-avatars.com/api/?name=FLZ&background=6c757d&color=fff&size=128",
+      "name": "FLZ"
+    },
+    {
+      "logo": "https://ui-avatars.com/api/?name=Ano+Novo&background=ffc107&color=000&size=128",
+      "name": "ANO NOVO"
+    },
+    {
+      "logo": "https://ui-avatars.com/api/?name=Hotel+Maiorana&background=198754&color=fff&size=128",
+      "name": "HOTEL MAIORANA"
+    },
+    {
+      "logo": "https://ui-avatars.com/api/?name=Academy&background=0d6efd&color=fff&size=128",
+      "name": "ACADEMY"
+    },
+    {
+      "logo": "https://ui-avatars.com/api/?name=Veridades+Doloridas&background=dc3545&color=fff&size=128",
+      "name": "VERIDADES DOLORIDAS"
+    },
+    {
+      "logo": "https://ui-avatars.com/api/?name=Tech+Solutions&background=6f42c1&color=fff&size=128",
+      "name": "TECH SOLUTIONS"
+    },
+    {
+      "logo": "https://ui-avatars.com/api/?name=Global+Logistics&background=fd7e14&color=fff&size=128",
+      "name": "GLOBAL LOGISTICS"
+    }
+  ]
+}

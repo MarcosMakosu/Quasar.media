@@ -1,0 +1,45 @@
+{
+  "team": [
+    {
+      "name": "Marina Castro",
+      "role": "Diretora Criativa",
+      "bio": "Narrative visual expert. 10+ anos construindo identidades que emocionam.",
+      "img": "https://randomuser.me/api/portraits/women/68.jpg",
+      "social": {
+        "linkedin": "#",
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "Rafael Mendes",
+      "role": "Head de Tráfego & Dados",
+      "bio": "Estratégias de ROI comprovado, mais de R$20M gerenciados em mídia.",
+      "img": "https://randomuser.me/api/portraits/men/32.jpg",
+      "social": {
+        "linkedin": "#",
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "Camila Salles",
+      "role": "Social Media Strategist",
+      "bio": "Conteúdo que engaja e comunidades que crescem com propósito.",
+      "img": "https://randomuser.me/api/portraits/women/45.jpg",
+      "social": {
+        "linkedin": "#",
+        "instagram": "#"
+      }
+    },
+    {
+      "name": "Lucas Andrade",
+      "role": "Motion & Design Lead",
+      "bio": "Visual storytelling e experiências imersivas para o digital.",
+      "img": "https://randomuser.me/api/portraits/men/75.jpg",
+      "social": {
+        "linkedin": "#",
+        "instagram": "#"
+      }
+    }
+    
+  ]
+}
