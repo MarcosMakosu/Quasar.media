@@ -2,35 +2,43 @@
   "clients": [
     {
       "logo": "https://ui-avatars.com/api/?name=Business+Academy&background=0D8ABC&color=fff&size=128",
-      "name": "BUSINESS ACADEMY"
+      "name": "BUSINESS ACADEMY",
+      "link": "https://www.instagram.com/businessacademy/"
     },
     {
       "logo": "https://ui-avatars.com/api/?name=FLZ&background=6c757d&color=fff&size=128",
-      "name": "FLZ"
+      "name": "FLZ",
+      "link": "https://www.flz.com.br"
     },
     {
       "logo": "https://ui-avatars.com/api/?name=Ano+Novo&background=ffc107&color=000&size=128",
-      "name": "ANO NOVO"
+      "name": "ANO NOVO",
+      "link": "https://www.instagram.com/anonovo/"
     },
     {
       "logo": "https://ui-avatars.com/api/?name=Hotel+Maiorana&background=198754&color=fff&size=128",
-      "name": "HOTEL MAIORANA"
+      "name": "HOTEL MAIORANA",
+      "link": "https://www.hotelmaiorana.com.br"
     },
     {
       "logo": "https://ui-avatars.com/api/?name=Academy&background=0d6efd&color=fff&size=128",
-      "name": "ACADEMY"
+      "name": "ACADEMY",
+      "link": "https://www.academy.com.br"
     },
     {
-      "logo": "https://ui-avatars.com/api/?name=Veridades+Doloridas&background=dc3545&color=fff&size=128",
-      "name": "VERIDADES DOLORIDAS"
+      "logo": "https://ui-avatars.com/api/?name=Aviario+%7C+DevHouse&background=dc3545&color=fff&size=128",
+      "name": "Aviario | DevHouse",
+      "link": "https://www.instagram.com/veridadesdoloridas/"
     },
     {
       "logo": "https://ui-avatars.com/api/?name=Tech+Solutions&background=6f42c1&color=fff&size=128",
-      "name": "TECH SOLUTIONS"
+      "name": "TECH SOLUTIONS",
+      "link": "https://www.techsolutions.com.br"
     },
     {
       "logo": "https://ui-avatars.com/api/?name=Global+Logistics&background=fd7e14&color=fff&size=128",
-      "name": "GLOBAL LOGISTICS"
+      "name": "GLOBAL LOGISTICS",
+      "link": "https://www.globallogistics.com"
     }
   ]
 }

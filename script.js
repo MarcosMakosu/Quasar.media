@@ -136,6 +136,7 @@ async function carregarClientes() {
                 `;
             }
 
+            // 👇 TRECHO QUE VERIFICA O LINK E CRIA O <a> OU <div>
             if (cliente.link) {
                 return `
                     <a href="${cliente.link}" target="_blank" class="client-item" style="text-decoration: none; color: inherit;">
@@ -147,12 +148,10 @@ async function carregarClientes() {
         }).join('');
 
         grid.innerHTML = htmlClientes;
-        console.log(`✅ ${dados.clients.length} clientes carregados`);
     } catch (erro) {
         console.error("❌ Erro ao carregar clientes:", erro);
     }
 }
-
 // Inicializa todos os carregamentos
 window.addEventListener('load', () => {
     carregarDepoimentos();
